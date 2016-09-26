@@ -1,6 +1,6 @@
 {
     "name":        "microkernel-mod-ctx",
-    "version":     "0.9.0",
+    "version":     "0.9.1",
     "description": "Microkernel module for determining the run-time context of the server application",
     "keywords": [
         "microkernel", "module", "ctx"
