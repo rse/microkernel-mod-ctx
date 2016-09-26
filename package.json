@@ -18,14 +18,21 @@
     "homepage": "https://github.com/rse/microkernel-mod-ctx",
     "bugs":     "https://github.com/rse/microkernel-mod-ctx/issues",
     "dependencies": {
-        "app-root-path": "~1.2.0",
-        "syspath":       "~0.9.0"
+        "app-root-path":            "~1.2.0",
+        "syspath":                  "~0.9.0"
+    },
+    "devDependencies": {
+        "babel-cli":                "~6.14.0",
+        "babel":                    "~6.5.2",
+        "babel-preset-es2015":      "~6.14.0",
+        "babel-eslint":             "~6.1.2",
+        "eslint":                   "~3.6.0"
     },
     "peerDependencies": {
-        "microkernel":   "*"
+        "microkernel":              "*"
     },
     "scripts": {
-        "prepublish": "jshint microkernel-mod-ctx.js && babel --presets es2015 microkernel-mod-ctx.js >microkernel-mod-ctx.js5"
+        "prepublish": "eslint --config eslint.json microkernel-mod-ctx.js && babel --presets es2015 microkernel-mod-ctx.js >microkernel-mod-ctx.js5"
     },
     "main": "microkernel-mod-ctx.js5"
 }
