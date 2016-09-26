@@ -18,8 +18,8 @@
     "homepage": "https://github.com/rse/microkernel-mod-ctx",
     "bugs":     "https://github.com/rse/microkernel-mod-ctx/issues",
     "dependencies": {
-        "app-root-path":            "~1.2.0",
-        "syspath":                  "~0.9.0"
+        "app-root-path":            "~2.0.1",
+        "syspath":                  "~0.9.1"
     },
     "devDependencies": {
         "babel-cli":                "~6.14.0",
