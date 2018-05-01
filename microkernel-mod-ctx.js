@@ -1,6 +1,6 @@
 /*
 **  Microkernel -- Microkernel for Server Applications
-**  Copyright (c) 2015-2016 Ralf S. Engelschall <rse@engelschall.com>
+**  Copyright (c) 2016-2018 Ralf S. Engelschall <rse@engelschall.com>
 **
 **  Permission is hereby granted, free of charge, to any person obtaining
 **  a copy of this software and associated documentation files (the
@@ -22,11 +22,13 @@
 **  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import path        from "path"
-import syspath     from "syspath"
-import appRootPath from "app-root-path"
+/*  external requirements  */
+const path        = require("path")
+const syspath     = require("syspath")
+const appRootPath = require("app-root-path")
 
-export default class Module {
+/*  the Microkernel module  */
+class Module {
     get module () {
         return {
             name:  "microkernel-mod-ctx",
@@ -36,7 +38,7 @@ export default class Module {
     }
     boot (kernel) {
         /*  determine application program name  */
-        let program = process.argv[1].replace(/^(?:.+?\/)?([^\/]+?)(?:\.[^.]+)?$/, "$1")
+        let program = process.argv[1].replace(/^(?:.+?\/)?([^/]+?)(?:\.[^.]+)?$/, "$1")
         kernel.rs("ctx:program", program)
 
         /*  determine application base directory  */
@@ -61,4 +63,7 @@ export default class Module {
         kernel.rs("ctx:procmode", "standalone")
     }
 }
+
+/*  export the Microkernel module  */
+module.exports = Module
 
