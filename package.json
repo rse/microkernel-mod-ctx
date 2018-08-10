@@ -18,17 +18,17 @@
     "homepage": "https://github.com/rse/microkernel-mod-ctx",
     "bugs":     "https://github.com/rse/microkernel-mod-ctx/issues",
     "dependencies": {
-        "app-root-path":            "2.0.1",
-        "syspath":                  "0.9.3"
+        "app-root-path":            "2.1.0",
+        "syspath":                  "0.9.4"
     },
     "devDependencies": {
-        "babel-eslint":             "8.2.5",
-        "eslint":                   "5.0.0",
+        "babel-eslint":             "8.2.6",
+        "eslint":                   "5.3.0",
         "eslint-config-standard":   "11.0.0",
         "eslint-plugin-standard":   "3.1.0",
         "eslint-plugin-promise":    "3.8.0",
-        "eslint-plugin-import":     "2.12.0",
-        "eslint-plugin-node":       "6.0.1"
+        "eslint-plugin-import":     "2.13.0",
+        "eslint-plugin-node":       "7.0.1"
     },
     "peerDependencies": {
         "microkernel":              "*"
