@@ -38,16 +38,16 @@ class Module {
     }
     boot (kernel) {
         /*  determine application program name  */
-        let program = process.argv[1].replace(/^(?:.+?\/)?([^/]+?)(?:\.[^.]+)?$/, "$1")
+        const program = process.argv[1].replace(/^(?:.+?\/)?([^/]+?)(?:\.[^.]+)?$/, "$1")
         kernel.rs("ctx:program", program)
 
         /*  determine application base directory  */
-        let basedir = appRootPath.toString()
+        const basedir = appRootPath.toString()
         kernel.rs("ctx:basedir", basedir)
 
         /*  provide program information  */
-        let pjson = require(path.join(basedir, "package.json"))
-        let info = {
+        const pjson = require(path.join(basedir, "package.json"))
+        const info = {
             app:     `${pjson.name} ${pjson.version}`,
             runtime: `Node ${process.versions.node}`,
             engine:  `V8 ${process.versions.v8}`
@@ -55,7 +55,7 @@ class Module {
         kernel.rs("ctx:info", info)
 
         /*  determine system paths  */
-        let sp = syspath({ appName: pjson.name })
+        const sp = syspath({ appName: pjson.name })
         kernel.rs("ctx:homedir", sp.homeDir)
         kernel.rs("ctx:datadir", sp.dataDir)
 
